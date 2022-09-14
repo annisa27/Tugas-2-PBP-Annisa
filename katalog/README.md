@@ -44,11 +44,64 @@ Nama App : app-annisa-tugas-2
   untuk melakukan mobilisasi seperti yang saya jelaskan pada pertanyaan sebelumnya
   
   ### ○ Implementasi Poin 1 - 4
+  1. Membuat sebuah fungsi pada `views.py` yang dapat melakukan pengambilan data dari model dan dikembalikan ke dalam sebuah HTML.
   
+  Fungsi yang saya buat pada [`views.py`](katalog/views.py). adalah fungsi `show_catalog(request)` yang berfungsi untuk melakukan query dari data `.json`.
+  Semua data dari `.json` diambil dari syntax `data_barang_katalog = CatalogItem.objects.all()` kemudian data yang telah diambil dikembalikan (return) ke     template .html menggunakan function `render()`
+  ```python
+   def show_catalog(request):
+    data_barang_katalog = CatalogItem.objects.all()
+    context = {
+        'list_barang': data_barang_katalog,
+        'nama': 'Annisa Az Zahra',
+        'npm': '2106701242'
+    }
+    return render(request, "katalog.html", context)
+   ```
+   2. Membuat sebuah routing untuk memetakan fungsi yang telah kamu buat pada [`views.py`](katalog/views.py).
+   
+   Bagian ini dilakukan dengan menambahkan path routing pada file `urls.py` [katalog](katalog) dan [project_django](project_django)
+
+   Pada [katalog](katalog)
+   ```python
+      urlpatterns = [
+          path('', show_catalog, name='show_catalog'),
+      ]
+   ```
+   
+   Pada [project_django](project_django)
+   ```python
+      urlpatterns = [
+          . . .
+          path('katalog/', include('katalog.urls')),
+      ]
+   ```
+
+   3. Memetakan data yang didapatkan ke dalam HTML dengan sintaks dari Django untuk pemetaan data template.
+   
+   Setelah data sudah dimuat dengan command  `python manage.py loaddata initial_wishlist_data.json`, dibuat variabel `context` yang akan menyimpan data
+   yang di-load. Kemudian variabel `context` akan menjadi parameter dari function `render()`. 
+   
+   Kemudian data ini akan ditampilkan pada [katalog.html](katalog/templates) dengan iterasi items yang terdapat pada [models.py](katalog/models.py)
+   ```python
+      {% for barang in list_barang %}
+        <tr>
+            <th>{{barang.item_name}}</th>
+            <th>{{barang.item_price}}</th>
+            <th>{{barang.item_stock}}</th>
+            <th>{{barang.description}}</th>
+            <th>{{barang.rating}}</th>
+            <th>{{barang.item_url}}</th>
+        </tr>
+      {% endfor %}
+   ```
+   
+   4. Melakukan deployment ke Heroku
   
-  
-  
-  
-  
-  
-  > Source: Rekaman kelas PBP A - Selasa, 14 September 2022 (https://drive.google.com/drive/folders/12NE5Dr2ujyVZYjI7RmaJIB9VaMh_mRFj)
+   Setelah membuat app khusus untuk deploy, tambahkan `repository secret` pada repositori yakni dengan menambahkan App Name dan API Key. 
+   Selanjutnya cukup lakukan `add`, `commit`, `push` perubahan yang telah dibuat, pada menu Actions pun dapat dilihat aktivitas deploy dari app.
+
+  ### Source
+  > Rekaman kelas PBP A - Selasa, 14 September 2022 (https://drive.google.com/drive/folders/12NE5Dr2ujyVZYjI7RmaJIB9VaMh_mRFj)
+  > https://pbp-fasilkom-ui.github.io/ganjil-2023/assignments/tutorial/tutorial-1/
+
