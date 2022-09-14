@@ -11,7 +11,18 @@ Nama App : app-annisa-tugas-2
 ## Jawaban Soal
 
   ### ○ Bagan Django Request Client & Response Cycle
+<img width="1344" alt="Bagan_AnnisaAzZahra_2106701242" src="https://user-images.githubusercontent.com/73637698/190141078-a36f742e-d0a6-4d7e-bc3a-94ffa2f75f21.png">
   
+  **Kaitan antara `urls.py`, `views.py`, `models.py`, dan `berkas .html`**
+  Pada gambar di atas, ketiga berkas .py dan berkas .html berhubungan satu sama lain.
+  1. Client akan mengirimkan request ke dalam server DJango dengan mengakses URL. Kemudian request yang masuk akan diproses oleh `urls.py` yang berfungsi sebagai router.
+  2. Request yang telah masuk pada `urls.py` akan diteruskan dan dicocokkan ke `views.py`. Kemudian akan dipanggil fungsi pada `views.py` yang sesuai.
+  3. `views.py` akan memanggil query ke `models.py` ketika ada aktivitas (read atau write) yang melibatkan database
+  4. Akan terjadi transaksi data yang dibutuhkan dari database
+  5. `views.py` akan mencari file `<filename>.html` yang sesuai dengan request client
+  6. `views.py`akan meneruskan respon HTML kepada client
+  
+
   ### ○ Penggunaan Virtual Environment pada Django
   **1. Jelaskan kenapa menggunakan virtual environment?**
   
@@ -31,7 +42,13 @@ Nama App : app-annisa-tugas-2
   
   Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment namun tentunya akan rawan terjadi konflik dan agak sulit
   untuk melakukan mobilisasi seperti yang saya jelaskan pada pertanyaan sebelumnya
-
-  > Source: Rekaman kelas PBP A - Selasa, 14 September 2022 (https://drive.google.com/drive/folders/12NE5Dr2ujyVZYjI7RmaJIB9VaMh_mRFj)
   
   ### ○ Implementasi Poin 1 - 4
+  
+  
+  
+  
+  
+  
+  
+  > Source: Rekaman kelas PBP A - Selasa, 14 September 2022 (https://drive.google.com/drive/folders/12NE5Dr2ujyVZYjI7RmaJIB9VaMh_mRFj)
