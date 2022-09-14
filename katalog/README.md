@@ -10,6 +10,28 @@ Nama App : app-annisa-tugas-2
 
 ## Jawaban Soal
 
-  ### 1. Bagan Django Request Client & Response Cycle
-  ### 2. Penggunaan Virtual Environment pada Django
-  ### 3. Implementasi Poin 1 - 4
+  ### ○ Bagan Django Request Client & Response Cycle
+  
+  ### ○ Penggunaan Virtual Environment pada Django
+  **1. Jelaskan kenapa menggunakan virtual environment?**
+  
+  Suatu virtual environment memungkinkan developer untuk membuat project yang berbeda-beda dengan dependencies yang berbeda-beda dalam suatu device atau
+  sistem operasi. Virtual environment ini akan membuat environment masing-masing untuk tiap project atau app, sehingga akan menghindari konflik dengan
+  sistem operasi utama yang sedang digunakan. Selain itu, virtual envinronment akan menginstall packages dan dependencies secara otomatis.
+  
+  Sebagai contoh, misalnya pada device yang kita gunakan, kita menginstall Django versi 3.2. Namun, kita sedang mengerjakan project dengan Django versi 1.7
+  Hal ini dapat diatasi dengan adanya virtual environment. Kita dapat mengerjakan project dengan Django 1.7 di device dengan Django 3.2 tanpa mengalami
+  konflik dengan menggunakan virtual environment.
+  
+  Virtual Environment juga memudahkan mobilisasi atau perpindahan project antar device. Jadi, seorang developer dapat dengan mudah mengerjakan projectnya
+  tanpa melakukan konfigurasi ulang.
+   
+  
+  **2. Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?**
+  
+  Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment namun tentunya akan rawan terjadi konflik dan agak sulit
+  untuk melakukan mobilisasi seperti yang saya jelaskan pada pertanyaan sebelumnya
+
+  > Source: Rekaman kelas PBP A - Selasa, 14 September 2022 (https://drive.google.com/drive/folders/12NE5Dr2ujyVZYjI7RmaJIB9VaMh_mRFj)
+  
+  ### ○ Implementasi Poin 1 - 4
