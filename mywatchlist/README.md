@@ -124,10 +124,12 @@ urlpatterns = [
 
 ## Screenshot Postman
 ### HTML Response
-<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 24" src="https://user-images.githubusercontent.com/73637698/191639274-805729a1-1591-43d7-865b-3e5ed7ceedea.png">
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 33 55" src="https://user-images.githubusercontent.com/73637698/191645642-495b9e51-d0ce-4f74-ab7c-c45f326cd540.png">
 
 ### JSON Response
-<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 30" src="https://user-images.githubusercontent.com/73637698/191639298-7312ee67-4f8b-4f39-b82d-5ebe88203947.png">
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 34 14" src="https://user-images.githubusercontent.com/73637698/191645652-ec6acb24-9eed-4461-a8e3-904c3c807da6.png">
 
 ### XML Response
-<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 38" src="https://user-images.githubusercontent.com/73637698/191639328-4b0bd78a-45cb-45e0-8eb8-0cc4df94838d.png">
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 34 03" src="https://user-images.githubusercontent.com/73637698/191645667-4e0f8a27-63f5-4140-96c9-32116f87d813.png">
+
+
