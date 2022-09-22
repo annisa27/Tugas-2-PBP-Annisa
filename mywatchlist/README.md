@@ -123,4 +123,11 @@ urlpatterns = [
 7.  App akan ter-deploy otomatis setelah di push
 
 ## Screenshot Postman
+### HTML Response
+<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 24" src="https://user-images.githubusercontent.com/73637698/191639274-805729a1-1591-43d7-865b-3e5ed7ceedea.png">
 
+### JSON Response
+<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 30" src="https://user-images.githubusercontent.com/73637698/191639298-7312ee67-4f8b-4f39-b82d-5ebe88203947.png">
+
+### XML Response
+<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 38" src="https://user-images.githubusercontent.com/73637698/191639328-4b0bd78a-45cb-45e0-8eb8-0cc4df94838d.png">
