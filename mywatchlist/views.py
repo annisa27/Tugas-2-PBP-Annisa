@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core import serializers
 
+from mywatchlist.models import BarangMyWatchlist
+
 
 # TODO: Create your views here.
 def show_mywatchlist(request):
@@ -11,6 +13,7 @@ def show_mywatchlist(request):
         'item_mywatchlist': item_mywatchlist,
         'nama' : 'Annisa',
         'npm' : '2106701242',
+        'message' : message()
     }
     return render(request, 'mywatchlist.html', context)
 
@@ -27,5 +30,20 @@ def show_html(request):
     context = {
         'item_mywatchlist': data,
         'nama' : 'Annisa',
+        'npm' : '2106701242',
+        'message' : message()
     }
     return render(request, 'mywatchlist.html', context)
+
+def message():
+    watched = BarangMyWatchlist.objects.all().values("watched")
+    sudah, all_list = 0,0
+
+    for i in watched:
+        all_list += 1
+        if i['watched'] == "sudah":
+            sudah += 1
+
+    if sudah >= all_list-sudah:
+        return "Selamat, kamu sudah banyak menonton!"
+    return "Wah, kamu masih sedikit menonton!"
