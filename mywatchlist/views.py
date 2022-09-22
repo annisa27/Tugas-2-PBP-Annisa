@@ -10,6 +10,7 @@ def show_mywatchlist(request):
     context = {
         'item_mywatchlist': item_mywatchlist,
         'nama' : 'Annisa',
+        'npm' : '2106701242',
     }
     return render(request, 'mywatchlist.html', context)
 
