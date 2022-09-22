@@ -124,12 +124,27 @@ urlpatterns = [
 
 ## Screenshot Postman
 ### HTML Response
+#### Heroku
 <img width="1440" alt="Screen Shot 2022-09-22 at 09 33 55" src="https://user-images.githubusercontent.com/73637698/191645642-495b9e51-d0ce-4f74-ab7c-c45f326cd540.png">
 
+#### Local
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 43 45" src="https://user-images.githubusercontent.com/73637698/191646727-069fee50-5019-4eb9-a4a2-acfa7c8eba0c.png">
+
 ### JSON Response
+#### Heroku
 <img width="1440" alt="Screen Shot 2022-09-22 at 09 34 14" src="https://user-images.githubusercontent.com/73637698/191645652-ec6acb24-9eed-4461-a8e3-904c3c807da6.png">
 
+#### Local
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 44 00" src="https://user-images.githubusercontent.com/73637698/191646923-bb4876ed-8fa9-4304-b236-e45de01cc0e6.png">
+
+
 ### XML Response
+#### Heroku
 <img width="1440" alt="Screen Shot 2022-09-22 at 09 34 03" src="https://user-images.githubusercontent.com/73637698/191645667-4e0f8a27-63f5-4140-96c9-32116f87d813.png">
+
+#### Local
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 43 52" src="https://user-images.githubusercontent.com/73637698/191646760-47136f73-9564-4871-975d-8c9aba043375.png">
+
+
 
 
