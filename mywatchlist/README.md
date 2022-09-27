@@ -124,10 +124,27 @@ urlpatterns = [
 
 ## Screenshot Postman
 ### HTML Response
-<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 24" src="https://user-images.githubusercontent.com/73637698/191639274-805729a1-1591-43d7-865b-3e5ed7ceedea.png">
+#### Heroku
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 33 55" src="https://user-images.githubusercontent.com/73637698/191645642-495b9e51-d0ce-4f74-ab7c-c45f326cd540.png">
+
+#### Local
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 43 45" src="https://user-images.githubusercontent.com/73637698/191646727-069fee50-5019-4eb9-a4a2-acfa7c8eba0c.png">
 
 ### JSON Response
-<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 30" src="https://user-images.githubusercontent.com/73637698/191639298-7312ee67-4f8b-4f39-b82d-5ebe88203947.png">
+#### Heroku
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 34 14" src="https://user-images.githubusercontent.com/73637698/191645652-ec6acb24-9eed-4461-a8e3-904c3c807da6.png">
+
+#### Local
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 44 00" src="https://user-images.githubusercontent.com/73637698/191646923-bb4876ed-8fa9-4304-b236-e45de01cc0e6.png">
+
 
 ### XML Response
-<img width="1440" alt="Screen Shot 2022-09-22 at 08 36 38" src="https://user-images.githubusercontent.com/73637698/191639328-4b0bd78a-45cb-45e0-8eb8-0cc4df94838d.png">
+#### Heroku
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 34 03" src="https://user-images.githubusercontent.com/73637698/191645667-4e0f8a27-63f5-4140-96c9-32116f87d813.png">
+
+#### Local
+<img width="1440" alt="Screen Shot 2022-09-22 at 09 43 52" src="https://user-images.githubusercontent.com/73637698/191646760-47136f73-9564-4871-975d-8c9aba043375.png">
+
+
+
+
