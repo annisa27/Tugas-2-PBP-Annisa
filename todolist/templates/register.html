@@ -4,28 +4,26 @@
 {% endblock meta %} 
 {% block content %}
 
+<body style="background: #fff4f8;">
 <div class="login">
-  <h1>User Registration</h1>
-
+  <h1>Account Registration</h1>
 
   <form method="POST">
     {% csrf_token %}
     <table>
       {{ form.as_table }}
       <tr>
-        <td></td>
         <td><input type="submit" name="submit" value="Daftar" /></td>
       </tr>
     </table>
   </form>
 
   {% if messages %}
-  <ul>
     {% for message in messages %}
-    <li>{{ message }}</li>
+    <p>{{ message }}</p>
     {% endfor %}
-  </ul>
   {% endif %}
 </div>
+</body>
 
 {% endblock content %}
