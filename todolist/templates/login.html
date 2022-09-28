@@ -10,32 +10,26 @@
 
 <div ALIGN='center'>
   <h2>Login</h2>
-  <form method="POST" action="">
-    {% csrf_token %}
-    <table">
+  <form method = "POST" action = "">
+    <table>
       <tr>
-        <td>Username:</td>
-        <td>
-          <input type="text" name="username" placeholder="Username" class="form-control"
-          />
-        </td>
+        <label for="uname">Username:</label><br>
       </tr>
-
+      <br>
       <tr>
-        <td>Password:</td>
-        <td>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            class="form-control"
-          />
-        </td>
+        <input type="text" name="username" placeholder="Username" class="form-control" />
       </tr>
-
+      <br>
       <tr>
-        <td></td>
-        <td><input class="btn login_btn" type="submit" value="Login" /></td>
+        <label for="pass">Password:</label>
+      </tr>
+      <br>
+      <tr>
+        <input type="password" name="password" placeholder="Password" class="form-control"/>
+      </tr>
+      <br>
+      <tr>
+        <input class="btn login_btn" type="submit" value="Login" />
       </tr>
     </table>
   </form>
