@@ -4,6 +4,9 @@
 {% endblock meta %} 
 
 {% block content %}
+<body style="background: #fff4f8;">
+  <h1>Let's Add your Task!</h1>
+  <h2>{{username}}</h2>
 <form method="POST" action="">
   {% csrf_token %}
   <table>
@@ -38,11 +41,10 @@
   </table>
 
   {% if messages %}
-  <ul>
     {% for message in messages %}
-    <li>{{ message }}</li>
+    <p>{{ message }}</p>
     {% endfor %}
-  </ul>
 {% endif %}
 </form>
+</body>
 {% endblock content %}

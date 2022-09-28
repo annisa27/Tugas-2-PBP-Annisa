@@ -2,20 +2,21 @@
 <title>Login</title>
 {% endblock meta %} {% block content %}
 
-<div class="login">
-  <h1>Login</h1>
+<body style="background: #fff4f8;">
+<div style="text-align:center;">
+  <h1 style="color:#ce5e8d">Welcome to Your Personal Task Manager!</h1>
+  <img src="https://i.pinimg.com/564x/de/81/43/de81436353589b5ce0f8db63f8e057f7.jpg" style="width:16rem">
+</div>
 
+<div ALIGN='center'>
+  <h2>Login</h2>
   <form method="POST" action="">
     {% csrf_token %}
-    <table>
+    <table">
       <tr>
         <td>Username:</td>
         <td>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            class="form-control"
+          <input type="text" name="username" placeholder="Username" class="form-control"
           />
         </td>
       </tr>
@@ -48,5 +49,7 @@
   {% endif %} Belum mempunyai akun?
   <a href="{% url 'todolist:register' %}">Buat Akun</a>
 </div>
+
+</body>
 
 {% endblock content %}

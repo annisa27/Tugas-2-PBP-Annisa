@@ -1,46 +1,48 @@
-{% extends 'base.html' %} {% block meta %}
+{% extends 'base.html' %} 
+{% block meta %}
 <title>Todolist</title>
-{% endblock meta %} {% block content %}
+{% endblock meta %} 
 
-
-<div>
-  <h1>Todolist</h1>
-  <h2>User: </h2>
-  <h2>{{username}}</h2>
-</div>
-
-
-{% if messages %}
-  <ul>
+{% block content %}
+<body style="background: #fff4f8;">
+<div style="padding: 10px;background-color: #f8aac5; color: #fff; text-align: center;">
+  <h1>To-Do List</h1>
+  <h2>Current user: {{username}}</h2>
+  {% if messages %}
     {% for message in messages %}
-    <li>{{ message }}</li>
+    <p>{{ message }}</p>
     {% endfor %}
-  </ul>
 {% endif %}
 
+  <div>
+    <button style="padding:10px; margin:8px; background-color: #ffa008;border-style: none;border-radius: 16px;">
+      <a href="{% url 'todolist:create_task' %}" style="text-decoration: none;font: bold;color: #fff;">Tambah Task Baru</a>
+    </button>
+    <button style="padding:10px; margin:8px; background-color: #ffa008;border-style: none;border-radius: 16px;">
+      <a href="{% url 'todolist:logout' %}" style="text-decoration: none;font: bold;color: #fff;">Logout</a>
+    </button>
+  </div>
+</div>
+
+<div style="margin-top: 20px;"">
 {% if todo %}
-<table class="table-border">
+<table class="table-border" width="100%">
+  <tr  style="background-color: #f8aac5">
   <th class="table-border">Created at</th>
   <th class="table-border">Title</th>
   <th class="table-border">Description</th>
-
 </tr>
 {% for task in todo %}
-<tr>
-  <td class="table-border" style="padding: 10px;">{{task.date}}</td>
-  <td class="table-border" style="padding: 10px;">{{task.title}}</td>
-  <td class="table-border" style="text-align: center;">{{task.description}}</td>
+<tr  style="background-color: #fff;">
+  <td  class="table-border" style="padding: 10px;">{{task.date}}</td>
+  <td class="table-border"">{{task.title}}</td>
+  <td class="table-border">{{task.description}}</td>
 </tr>
 {% endfor %}
 </table>
 {% else %}
 {% endif %}
-<div>
-  <button>
-    <a href="{% url 'todolist:create_task' %}">Tambah Task Baru</a>
-  </button>
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+
 </div>
-
-
+</body>
 {% endblock content %}
