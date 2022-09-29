@@ -37,7 +37,7 @@ Suatu platform akan menggunakan data dari banyak sumber. Semakin kompleks dan di
 
 
 ### ○ Implementasi Checklist
-1. Membuat suatu aplikasi baru bernama mywatchlist di proyek Django Tugas 2 pekan lalu dengan command `python manage.py startapp mywatchlist`
+1. Membuat suatu aplikasi baru bernama mywatchlist di proyek Django Tugas 2 pekan lalu 
 2. Menambahkan path mywatchlist pada `settings.py` di file [`settings.py`](project_django/settings.py).
     ```python
     INSTALLED_APPS = [

@@ -56,13 +56,14 @@ def login_user(request):
     }
     return render(request, 'login.html', context)
 
+@login_required(login_url='login/')
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
 
-
+@login_required(login_url='login/')
 def create_task(request):
     if request.method == 'POST':
         title = request.POST.get('title')
