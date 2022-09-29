@@ -26,18 +26,38 @@
 
 <div style="margin-top: 20px;"">
 {% if todo %}
-<table class="table-border" width="100%">
+<table class="table-border" width="100%" color="white">
   <tr  style="background-color: #f8aac5">
   <th class="table-border">Created at</th>
   <th class="table-border">Title</th>
   <th class="table-border">Description</th>
+  <th class="table-border">Status</th>
+  <th class="table-border" colspan="2">Action</th>
 </tr>
 {% for task in todo %}
 <tr  style="background-color: #fff;">
   <td  class="table-border" style="padding: 10px;">{{task.date}}</td>
   <td class="table-border"">{{task.title}}</td>
   <td class="table-border">{{task.description}}</td>
+  <td> {% if not todolist.is_finished %} 
+    Completed
+    {% else %} 
+    Pending
+    {% endif %}
+  </td>
+  <td> 
+    <button style="padding:8px; margin:8px; background-color: #27a32d;border-style: none;border-radius: 16px;">
+      <a href="{% url 'todolist:task_status' task.pk %}" style="text-decoration: none;font: bold;color: #fff;">Change Status</a>
+    </button> 
+  </td>
+  <td> 
+    <button style="padding:8px; margin:8px; background-color: #ce2b87;border-style: none;border-radius: 16px;">
+      <a href="{% url 'todolist:delete_task' task.pk %}" style="text-decoration: none;font: bold;color: #fff;">Delete Task</a>
+    </button> 
+  </td>
 </tr>
+
+
 {% endfor %}
 </table>
 {% else %}

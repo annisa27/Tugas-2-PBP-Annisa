@@ -80,4 +80,23 @@ def create_task(request):
     return render(request, "create.html")
 
 
+@login_required(login_url='/todolist/login/')
+def task_status(request, key):
+    task = ToDoList.objects.get(
+        user = request.user,
+        pk = key
+    )
+    task.is_finished = not task.is_finished
+    task.save()
 
+    return redirect('todolist:show_todolist')
+
+@login_required(login_url='/todolist/login/')
+def delete_task(request, key):
+    task = ToDoList.objects.get(
+        user = request.user,
+        pk = key
+    )
+    task.delete()
+
+    return redirect('todolist:show_todolist')
