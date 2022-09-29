@@ -39,7 +39,7 @@
   <td  class="table-border" style="padding: 10px;">{{task.date}}</td>
   <td class="table-border"">{{task.title}}</td>
   <td class="table-border">{{task.description}}</td>
-  <td> {% if not todolist.is_finished %} 
+  <td> {% if task.is_finished %} 
     Completed
     {% else %} 
     Pending

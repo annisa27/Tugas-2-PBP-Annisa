@@ -16,6 +16,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.models import ToDoList
 
+from django.shortcuts import get_object_or_404
+
 # Create your views here.
 @login_required(login_url='login/')
 def show_todolist(request):
@@ -88,7 +90,6 @@ def task_status(request, key):
     )
     task.is_finished = not task.is_finished
     task.save()
-
     return redirect('todolist:show_todolist')
 
 @login_required(login_url='/todolist/login/')
@@ -98,5 +99,4 @@ def delete_task(request, key):
         pk = key
     )
     task.delete()
-
     return redirect('todolist:show_todolist')
