@@ -13,7 +13,6 @@ Fungsi dari `{% csrf_token %}` adalah sebagai pertahanan yang disediakan Django 
 
 Apabila kita tidak menyertakan potongan kode `{% csrf_token %}` pada elemen `<form>`, akan muncul Error 403 Forbidden dengan keterangan "CSRF verification failed. Request aborted." karena CSRF Tokennya tidak dapat ditemukan.Sehingga, user tidak dapat mengakses halaman HTMLnya
 
-
 ### ○ Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Jelaskan secara gambaran besar bagaimana cara membuat <form> secara manual.
 Tentu saja kita dapat membuat elemen `<form>` secara manual dengan memanfaatkan elemen `<input>` pada `.html`. Pertama, kita dapat mendefinisikan elemen `<form>` terlebih dahulu, kemudian di dalam tag `<form>` kita dapat mendefinisikan elemen `<label>` sebagai pendanda input dan `<input>` sebagai tempat user mengisikan data dengan text area, radio button, atau tipe lain. Input ini dapat disesuaikan keperluannya, setidaknya terdapat 22 tipe input. Tipe input yang digunakan pada tugas ini adalah text, password, dan submit untuk melakukan action yang telah didefinisikan pada elemen `<form>`.
 
@@ -30,7 +29,6 @@ Kemudian jika ingin tampilan form dapat lebih rapih, kita dapat emnggunakan elem
 
 ### ○ Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
 Ketika pengguna melakukan submisi terhadap HTML form yang telah diisi, browser akan membuat HTTP Request, method, dan argumen yang diterima ke destinasi URL berdasarkan halaman `.html` dari form. HTTP Request ini akan dikirimkan oleh browser ke server dengan method POST, hal ini akan melakukan perubahan terhadap database server. Ketika server telah menerima dan menyimpan HTTP Request yang dikirimkan, server akan mengecek apakah request yang request yang dikirimkan valid. Setelah itu, server akan melihat method mana pada views.py yang cocok untuk meng-handle request yang dikirimkan. Ketika menemukan method yang cocok, Django views akan merespon dengan mengembalikan HTTP Response dan memproses data yang dikirimkan menjadi halaman `.html`. 
-
 
 
 ### ○ Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
@@ -63,7 +61,6 @@ Kemudian, dijalankan perintah `python manage.py makemingrations` dan `python man
 
   def register(request):
     ...
-
 
   def login_user(request):
     ...

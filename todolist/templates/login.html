@@ -1,50 +1,52 @@
-{% extends 'base.html' %} {% block meta %}
+{% extends 'base.html' %} 
+
+{% block meta %}
 <title>Login</title>
-{% endblock meta %} {% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+{% endblock meta %} 
 
-<body style="background: #fff4f8;">
-<div style="text-align:center;">
-  <h1 style="color:#ce5e8d">Welcome to Your Personal Task Manager!</h1>
-  <img src="https://i.pinimg.com/564x/de/81/43/de81436353589b5ce0f8db63f8e057f7.jpg" style="width:16rem">
-</div>
+{% block content %}
+<body class="h-100" style="background-image: linear-gradient(#3494E6,#ec6ead, #ec6ead,#fff); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100%;">
+  <div class="container h-100" style="background-color:#fff;border-radius: 2rem; margin-top: 10%; width:50%; height: 50%; box-shadow: 10px 10px 100px rgb(166, 166, 166);
+  " >
+        <div class="row h-100 justify-content-center align-items-center" style="margin:4%;">
+            <div class="col-10">
+              <!-- Form -->
+              <form class="form-example" action="" method="post" style="padding:4%">
+                {% csrf_token %}
+                <b>
+                  <h1 ALIGN="center">Welcome to Your Personal Task Manager!</h1>
+                </b>
+                <p class="description" ALIGN="center">Login disini untuk membuat dan memantau tugasmu</p>
 
-<div ALIGN='center'>
-  <h2>Login</h2>
-  <form method = "POST" action = "">
-    {% csrf_token %}
-    <table>
-      <tr>
-        <label for="uname">Username:</label><br>
-      </tr>
-      <br>
-      <tr>
-        <input type="text" name="username" placeholder="Username" class="form-control" />
-      </tr>
-      <br>
-      <tr>
-        <label for="pass">Password:</label>
-      </tr>
-      <br>
-      <tr>
-        <input type="password" name="password" placeholder="Password" class="form-control"/>
-      </tr>
-      <br>
-      <tr>
-        <input class="btn login_btn" type="submit" value="Login" />
-      </tr>
-    </table>
-  </form>
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="messsage" ALIGN="center" style="color:red">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}   
 
-  {% if messages %}
-  <ul>
-    {% for message in messages %}
-    <li>{{ message }}</li>
-    {% endfor %}
-  </ul>
-  {% endif %} Belum mempunyai akun?
-  <a href="{% url 'todolist:register' %}">Buat Akun</a>
-</div>
+                <!-- Input fields -->
+                <div class="form-group" style="margin-top:4%;">
+                  <label for="username">Username:</label>
+                  <input type="text" class="form-control username" id="username" placeholder="Username..." name="username">
+                </div>
 
+
+                <div class="form-group" style="margin-top:4%;">
+                  <label for="password">Password:</label>
+                  <input type="password" class="form-control password" id="password" placeholder="Password..." name="password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-customized" style="margin-top:4%;">Login</button>
+
+                <p style="margin-top:4%;">
+                  Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+                </p>
+              </form>
+      <!-- Form end -->
+            </div>
+        </div>
+    </div>
 </body>
-
 {% endblock content %}
+
