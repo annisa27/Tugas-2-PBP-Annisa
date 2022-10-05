@@ -5,97 +5,51 @@
 {% endblock meta %} 
 
 {% block content %}
-<body class="h-100" style="background-image: linear-gradient(#3494E6,#ec6ead, #ec6ead,#fff); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100%;">
-  <div class="container h-100" style="background-color:#fff;border-radius: 2rem; margin-top: 10%; width:50%; height: 50%; box-shadow: 10px 10px 100px rgb(166, 166, 166);
-  " >
-        <div class="row h-100 justify-content-center align-items-center" style="margin:4%;">
-            <div class="col-10">
-              <!-- Form -->
-              <form class="form-example" action="" method="post" style="padding:4%">
-                {% csrf_token %}
-                <b>
-                  <h1 ALIGN="center">Let's Add your Task!</h1>
-                </b>
-                <p class="description" ALIGN="center">Login disini untuk membuat dan memantau tugasmu</p>
+<body style="background-image: linear-gradient(#3494E6,#ec6ead, #ec6ead,#fff); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100%;">
+  <div class="container h-100" style="background-color:#fff;border-radius: 2rem; margin-top: 10%; width:50%; height: 50%; box-shadow: 10px 10px 100px rgb(166, 166, 166);">
+    <div class="row h-100 justify-content-center align-items-center" style="margin:4%;">
+        <div class="col-10">
+          <!-- Form -->
+          <form class="form-example" action="" method="post" style="padding:4%">
+            {% csrf_token %}
+            <b>
+              <h1 ALIGN="center">Let's Add your Task!</h1>
+            </b>
+            <p class="description" ALIGN="center">Silahkan masukan judul dan deskripsi tugasmu</p>
 
-                {% if messages %}
-                    {% for message in messages %}
-                        <p class="messsage" ALIGN="center" style="color:red">{{ message }}</p>
-                    {% endfor %}
-                {% endif %}   
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="messsage" ALIGN="center" style="color:red">{{message}}</p>
+                {% endfor %}
+            {% endif %}   
 
-                <!-- Input fields -->
-                <div class="form-group" style="margin-top:4%;">
-                  <label for="username">Username:</label>
-                  <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          class="form-control"
-        />
-                </div>
-
-
-                <div class="form-group" style="margin-top:4%;">
-                  <label for="password">Password:</label>
-                  <input type="password" class="form-control password" id="password" placeholder="Password..." name="password">
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-customized" style="margin-top:4%;">Login</button>
-
-                <p style="margin-top:4%;">
-                  Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
-                </p>
-              </form>
-      <!-- Form end -->
+            <!-- Input fields -->
+            <div class="form-group" style="margin-top:4%;">
+              <label for="judul">Judul:</label>
+              <input
+              type="text"
+              name="title"
+              placeholder="Judul..."
+              class="form-control"
+            />
             </div>
+
+            <div class="form-group" style="margin-top:4%;">
+              <label for="description">Deskripsi:</label>
+              <input
+              type="text"
+              name="description"
+              placeholder="Deskripsi..."
+              class="form-control"
+            />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-customized" style="margin-top:4%;" value="Submit">Submit</button>
+
+          </form>
+  <!-- Form end -->
         </div>
     </div>
+</div>
 </body>
 {% endblock content %}
-
-<!-- {% block content %}
-<body class="h-100" style="background-image: linear-gradient(#3494E6,#ec6ead, #ec6ead,#fff); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100%;">
-  <h1>Let's Add your Task!</h1>
-  <h2>{{username}}</h2>
-<form method="POST" action="">
-  {% csrf_token %}
-  <table>
-    <tr>
-      <td>Judul:</td>
-      <td>
-        <input
-          type="text"
-          name="title"
-          placeholder="Title"
-          class="form-control"
-        />
-      </td>
-    </tr>
-
-    <tr>
-      <td>Deskripsi:</td>
-      <td>
-        <input
-          type="text"
-          name="description"
-          placeholder="Description"
-          class="form-control"
-        />
-      </td>
-    </tr>
-
-    <tr>
-      <td></td>
-      <td><input class="btn submit_btn" type="submit" value="Submit" /></td>
-    </tr>
-  </table>
-
-  {% if messages %}
-    {% for message in messages %}
-    <p>{{ message }}</p>
-    {% endfor %}
-  {% endif %}
-</form>
-</body>
-{% endblock content %} -->
