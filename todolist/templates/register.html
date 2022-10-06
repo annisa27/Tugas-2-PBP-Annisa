@@ -7,15 +7,18 @@
 
 {% block content %}
 <body style="background-image: url(https://thumbs.dreamstime.com/b/seamless-pattern-repeatable-background-website-wallpaper-textile-printing-texture-editable-vector-87678560.jpg); background-repeat: repeat; background-size: cover; background-position: center; height: 100%; width: 100%;">
-  <div class="container h-100" style="background-color:#fff;border-radius: 2rem; margin-top: 10%; width:50%; height: 50%; box-shadow: 10px 10px 100px rgb(166, 166, 166);">
-    <div class="row h-100 justify-content-center align-items-center" style="margin:4%;">
-        <div class="col-10">
+  <div class="container h-100" style="background-color:#fff;border-radius: 2rem; width:90%; height: 80%; box-shadow: 10px 10px 100px rgb(166, 166, 166);">
+    <div class="row h-100 justify-content-center align-items-center" style="margin:4%">
+        <div>
          <h1 ALIGN="center" style="margin-top:4%">Account Registration</h1>
- 
+        
+         <div style="background-color:#fff;border-radius: 2rem; width:90%; height: 80%; box-shadow: 10px 10px 100px rgb(166, 166, 166);"></div>
           <form method="POST">
             {% csrf_token %}
             <table>
               {{ form.as_table }}
+
+
               <tr>
                 <td>
                   <button type="submit" class="btn btn-primary" style="margin-top:4%;">Daftar</button>
@@ -23,6 +26,7 @@
               </tr>
             </table>
           </form>
+        </div>
 
   {% if messages %}
     {% for message in messages %}
