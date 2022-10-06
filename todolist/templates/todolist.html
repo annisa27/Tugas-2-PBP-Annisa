@@ -5,36 +5,40 @@
 {% endblock meta %} 
 
 {% block content %}
-<body>
+<body style="background-image: url(https://thumbs.dreamstime.com/b/seamless-pattern-repeatable-background-website-wallpaper-textile-printing-texture-editable-vector-87678560.jpg); background-repeat: repeat; background-size: cover; background-position: center; height: 100%; width: 100%;">
   <div ALIGN = "center">
-    <h1 ALIGN = "center">Let's get your job done! 🤩</h1>
+    <h1 ALIGN = "center">Let's get your task done! 🤩</h1>
     <h3 ALIGN = "center">Current user: {{username}}</h3>
     {% if messages %}
       {% for message in messages %}
-      <p>{{ message }}</p>
+      <p style="color: green;">{{ message }}</p>
       {% endfor %}
     {% endif %}
 
     <div>
       <button class="btn btn-primary btn-customized">
-        <a href="{% url 'todolist:create_task' %}" style="color: #fff; text-decoration: none;">Tambah Task Baru</a>
+        <a href="{% url 'todolist:create_task' %}" style="color: #fff; text-decoration: none;">
+          ✚ Tambah Task Baru
+        </a>
       </button>
       <button class="btn btn-danger" >
-        <a href="{% url 'todolist:logout' %}" style="color: #fff; text-decoration: none;">Logout</a>
+        <a href="{% url 'todolist:logout' %}" style="color: #fff; text-decoration: none;">
+          ⇲ Logout
+        </a>
       </button>
     </div>
   </div>
 
   <div >
   <div >
-    <div  class="flex-container" style=" display: grid;
+    <div  class="card-grid" style=" display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 10px;
     padding: 10px;">
     {% if todo %}
       {% for task in todo %}
-      <div class="card text-white bg-dark mb-3" style="margin:2%">
-        <div class="card-header">
+      <div class="card" style="margin:2%;">
+        <div class="card-header" style="background-color: rgb(195, 107, 184);">
           <h4 class="card-title">{{task.title}}</h4>
           <p class="card-text">Created on: {{task.date}}</p>
 
@@ -53,12 +57,16 @@
         <div class="card-body">
           
           <p class="card-text">{{task.description}}</p>
+          
         
-          <button class="btn btn-info" style="margin-top:4%;">
-            <a href="{% url 'todolist:task_status' task.pk %}" style="color: #fff; text-decoration: none;">Change Status</a>
+          
+        </div>
+        <div class="card-footer">
+          <button class="btn" style="margin-top:4%;background-color: blueviolet;">
+            <a href="{% url 'todolist:task_status' task.pk %}" style="color: #fff; text-decoration: none;">🔄 Change Status</a>
           </button> 
-          <button class="btn btn-danger" style="margin-top:4%;">
-            <a href="{% url 'todolist:delete_task' task.pk %}" style="color: #fff; text-decoration: none;">Delete Task</a>
+          <button class="btn btn-warning" style="margin-top:4%;">
+            <a href="{% url 'todolist:delete_task' task.pk %}" style="color: #fff; text-decoration: none;">🗑 Delete Task</a>
           </button> 
         </div>
       </div>
