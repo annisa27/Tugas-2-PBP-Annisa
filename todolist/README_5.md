@@ -66,7 +66,36 @@ Kemudian saya mengimplementasi inline css untuk hampir ke setiap tag html yang t
 
 Untuk halaman `login.html`, `create.html`, dan `register.html` kurang lebih memiliki struktur yang sama, peletakannya menggunakan class container dan row. 
 
-Untuk halaman `todolist.html` saya membuat tiap task syntax for, kemudian tiap task tersebut akan di generate dalam bentuk card. Implementasi card ini saya memanfaatkan class pada boostrap juga sehingga akan otomatis terbentuk. Tiap card ini disusun dalam display grid.
+Untuk halaman `todolist.html` saya membuat tiap task syntax for, kemudian tiap task tersebut akan di generate dalam bentuk card. Implementasi card ini saya memanfaatkan class pada boostrap juga sehingga akan otomatis terbentuk. Tiap card ini disusun dalam display grid. 
+```html
+    <div >
+    <div >
+        <div  class="card-grid" style=" display: grid; grid-template-columns: auto auto auto auto; gap: 10px; padding: 10px;">
+        {% if todo %}
+        {% for task in todo %}
+        <div class="card" style="margin:2%;">
+            <div class="card-header" style="background-color: rgb(195, 107, 184);">
+            ...
+            </div>
+
+            <div class="card-body">
+            ...
+            </div>
+            
+            <div class="card-footer">
+            ...
+            </div>
+        </div>
+
+        {% endfor %}
+        {% else %}
+        {% endif %}
+    </div>
+    </div>
+    </div>
+```
+
+Untuk membuat keempat halaman yang dikustomisasi menjadi responsive, saya cukup memanfaatkan framework dari bootstrap yang telah menyediakan fitur responsiveness. Kemudian, untuk ukuran masing-masing element saya menggunakan satuan `%` dan `rem` agar lebih responsive.
 
 Sumber:
 > https://www.niagahoster.co.id/blog/perbedaan-internal-external-dan-inline-css/
