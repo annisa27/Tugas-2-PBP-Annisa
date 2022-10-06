@@ -59,11 +59,16 @@ Secara garis besar, suatu elemen HTML bisa diakses dengan tiga tipe CSS Selector
 | ID Selector | Ditulis dengan menggunakan leading `#` developer harus mendefinisikan atribut `id=""` kemudian nama dari id yang telah dibuat dapat digunakan pada penulisan CSS | Contohnya developer mendefinisikan atribut id sebagai `id="maincontent"`. Maka pada file css, developer dapat memanggil `#maincontent{ ... }` selector ini akan memilih semua elemen dengan id maincontent |
 
 ### ○Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
-1. 
-2.
+Pertama saya mengimport bootstrap ke setiap file .html saya untuk memanfaatkan framewrok bootstrap dengan meletakkan 
+` <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">` pada bagian block meta, sebenarnya hal ini cukup dilakukan pada bagian `extends.html` saja, namun cara ini tidak berhasil pada saya.  
 
+Kemudian saya mengimplementasi inline css untuk hampir ke setiap tag html yang terdapat pada filenya. Saya memanfaatkan atribut dan class di bootstrap untuk melakukan styling terhadap elemen HTML yang didefinisikan.
 
+Untuk halaman `login.html`, `create.html`, dan `register.html` kurang lebih memiliki struktur yang sama, peletakannya menggunakan class container dan row. 
 
+Untuk halaman `todolist.html` saya membuat tiap task syntax for, kemudian tiap task tersebut akan di generate dalam bentuk card. Implementasi card ini saya memanfaatkan class pada boostrap juga sehingga akan otomatis terbentuk. Tiap card ini disusun dalam display grid.
+
+Sumber:
 > https://www.niagahoster.co.id/blog/perbedaan-internal-external-dan-inline-css/
 
 > PPT PBP - Slide 6: Web Design Using HTML5 and CSS3
