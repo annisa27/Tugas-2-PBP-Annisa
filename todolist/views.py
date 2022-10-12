@@ -1,5 +1,6 @@
+from asyncio.base_tasks import _task_print_stack
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.http import HttpRequest
 from django.core import serializers
 
@@ -16,7 +17,9 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.models import ToDoList
 
+
 from django.shortcuts import get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 @login_required(login_url='login/')
@@ -100,3 +103,37 @@ def delete_task(request, key):
     )
     task.delete()
     return redirect('todolist:show_todolist')
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    data = ToDoList.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+    
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request):
+    tasklist = ToDoList.objects.filter(user=request.user)
+    context = {
+        'tasks' : tasklist,
+        'username' : request.user,
+    }
+    return render(request, "todolist.html", context)
+
+@csrf_exempt
+def create_todolist_ajax(request):
+    if request.method == 'POST':
+
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        task = ToDoList.objects.create(title=title, description=description, date=datetime.date.today(), user=request.user)
+        
+        result = {
+            'fields':{
+                'title':task.title,
+                'description':task.description,
+                'date':task.date,
+            },
+            'pk':task.pk
+        }
+        print(result)
+
+        return JsonResponse(result)

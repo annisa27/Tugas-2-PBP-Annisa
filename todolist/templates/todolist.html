@@ -1,75 +1,146 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+
 {% block meta %}
 <title>Todolist</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-{% endblock meta %} 
+<meta name="viewport", content="width=device-width, initial-scale=1.0"></meta>
+{% endblock meta %}
 
 {% block content %}
-<body style="background-image: url(https://thumbs.dreamstime.com/b/seamless-pattern-repeatable-background-website-wallpaper-textile-printing-texture-editable-vector-87678560.jpg); background-repeat: repeat; background-size: cover; background-position: center; height: 100%; width: 100%;">
-  <div ALIGN = "center">
-    <h1 ALIGN = "center">Let's get your task done! 🤩</h1>
-    <h3 ALIGN = "center">Current user: {{username}}</h3>
-    {% if messages %}
-      {% for message in messages %}
-      <p style="color: green;">{{ message }}</p>
-      {% endfor %}
-    {% endif %}
+<head>
+    <!-- Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <div>
-      <button class="btn btn-primary btn-customized">
-        <a href="{% url 'todolist:create_task' %}" style="color: #fff; text-decoration: none;">
-          ✚ Tambah Task Baru
-        </a>
-      </button>
-      <button class="btn btn-danger" >
-        <a href="{% url 'todolist:logout' %}" style="color: #fff; text-decoration: none;">
-          ⇲ Logout
-        </a>
-      </button>
+        <!-- Script to get JSON file and display its content -->
+        <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            $.get("/todolist/json/", function(todolist) {
+                console.log(todolist);
+                for (i = 0; i < todolist.length; i++){
+                    $(".card-grid").append(
+                    `       
+                    <div>
+                        <div class="card" style="margin:2%;">
+                            <div class="card-header" style="background-color: rgb(195, 107, 184);">
+                                <h4 class="card-title">${todolist[i].fields.title}</h4>
+                                <p class="card-text">Created on: ${todolist[i].fields.date}</p>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text">${todolist[i].fields.description}</p>
+                            </div>
+                         <div>
+                    <div>
+                        `)
+                }
+            });
+            $("#submit").click(function(){
+              $.post("/todolist/add/", {
+                title : $('#title').val(),
+                description: $('#description').val()},
+                function (result) {
+                  $(".card-grid").append(`      
+                    <div>
+                        <div class="card" style="margin:2%;">
+                            <div class="card-header" style="background-color: rgb(195, 107, 184);">
+                                <h4 class="card-title">${todolist[i].fields.title}</h4>
+                                <p class="card-text">Created on: ${todolist[i].fields.date}</p>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text">${todolist[i].fields.description}</p>
+                            </div>
+                         <div>
+                    <div>
+                        `)
+                  $('#title').val(''),
+                  $('#description').val('')
+                }
+                )
+              })
+        }); 
+        </script>
+</head>
+
+<body style="background-image: url(https://thumbs.dreamstime.com/b/seamless-pattern-repeatable-background-website-wallpaper-textile-printing-texture-editable-vector-87678560.jpg); background-repeat: repeat; background-size: cover; background-position: center; height: 100%; width: 100%;">
+    <div ALIGN = "center">
+        <h1 ALIGN = "center">Let's get your task done! 🤩</h1>
+        <h3 ALIGN = "center">Current user: {{username}}</h3>
+
+        <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                ✚ Tambah Task Baru
+            </button>
+            <!-- <button class="btn btn-primary">
+            <a href="{% url 'todolist:show_todolist' %}" class="link-light">To Do List versi ORI</a>
+            </button>  -->
+            <button class="btn btn-danger" >
+            <a href="{% url 'todolist:logout' %}" style="color: #fff; text-decoration: none;">
+                ⇲ Logout
+            </a>
+            </button>
+        </div>
+    </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form -->
+          <form class="form-example" action="" method="post" style="padding:4%">
+            {% csrf_token %}
+            <b>
+              <h2 ALIGN="center">Let's Add your Task!</h2>
+            </b>
+            <p class="description" ALIGN="center">Silahkan masukan judul dan deskripsi tugasmu</p>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="messsage" ALIGN="center" style="color:red">{{message}}</p>
+                {% endfor %}
+            {% endif %}   
+
+            <!-- Input fields -->
+            <div class="form-group" style="margin-top:4%;">
+              <label for="judul">Judul:</label>
+              <input
+              type="text"
+              name="title"
+              id ="title"
+              placeholder="Judul..."
+              class="form-control"
+            />
+            </div>
+
+            <div class="form-group" style="margin-top:4%;">
+              <label for="description">Deskripsi:</label>
+              <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Deskripsi..."
+              class="form-control"
+            />
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="submit" data-bs-dismiss="modal">Tambahkan</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div >
-  <div >
-    <div  class="card-grid" style=" display: grid; grid-template-columns: auto auto auto auto; gap: 10px; padding: 10px;">
-    {% if todo %}
-      {% for task in todo %}
-      <div class="card" style="margin:2%;">
-        <div class="card-header" style="background-color: rgb(195, 107, 184);">
-          <h4 class="card-title">{{task.title}}</h4>
-          <p class="card-text">Created on: {{task.date}}</p>
-
-          {% if task.is_finished %} 
-          <p style="background-color: rgb(191, 255, 127); color: rgb(106, 146, 66);padding:1% 1% 1% 2%; width:50%; border-radius: 2rem;">
-            Completed ✅
-          </p>
-          {% else %} 
-          <p style="background-color: rgb(255, 244, 180); color:rgb(108, 103, 73); padding:1% 1% 1% 2%; width:50%; border-radius: 2rem;">
-            Pending ⌛️
-          </p>
-          {% endif %}
-
-        </div>
-
-        <div class="card-body">
-          <p class="card-text">{{task.description}}</p>
-        </div>
-        
-        <div class="card-footer">
-          <button class="btn" style="margin-top:4%;background-color: blueviolet;">
-            <a href="{% url 'todolist:task_status' task.pk %}" style="color: #fff; text-decoration: none;">🔄 Change Status</a>
-          </button> 
-          <button class="btn btn-warning" style="margin-top:4%;">
-            <a href="{% url 'todolist:delete_task' task.pk %}" style="color: #fff; text-decoration: none;">🗑 Delete Task</a>
-          </button> 
-        </div>
-      </div>
-
-    {% endfor %}
-    {% else %}
-    {% endif %}
-  </div>
-</div>
-</div>
+ 
+<div class="card-grid" style=" display: grid; grid-template-columns: auto auto auto auto; gap: 10px; padding: 10px;"></div>
 </body>
+
 {% endblock content %}
+
