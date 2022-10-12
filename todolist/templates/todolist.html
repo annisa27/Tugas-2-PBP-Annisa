@@ -41,18 +41,13 @@
                 description: $('#description').val()},
                 function (result) {
                   $(".card-grid").append(`      
-                    <div>
-                        <div class="card" style="margin:2%;">
-                            <div class="card-header" style="background-color: rgb(195, 107, 184);">
-                                <h4 class="card-title">${todolist[i].fields.title}</h4>
-                                <p class="card-text">Created on: ${todolist[i].fields.date}</p>
-                            </div>
-
-                            <div class="card-body">
-                                <p class="card-text">${todolist[i].fields.description}</p>
-                            </div>
-                         <div>
-                    <div>
+                    <div class="card" style="max-width: 18rem;">
+                        <div class="card-body">
+                          <h4 class="card-title">${result.fields.title}</h5>
+                          <p class="card-text">Created on: ${result.fields.date}</p>
+                          <p class="card-text">${result.fields.description}</p>
+                        </div>
+                    </div>
                         `)
                   $('#title').val(''),
                   $('#description').val('')
@@ -72,9 +67,6 @@
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 ✚ Tambah Task Baru
             </button>
-            <!-- <button class="btn btn-primary">
-            <a href="{% url 'todolist:show_todolist' %}" class="link-light">To Do List versi ORI</a>
-            </button>  -->
             <button class="btn btn-danger" >
             <a href="{% url 'todolist:logout' %}" style="color: #fff; text-decoration: none;">
                 ⇲ Logout
@@ -100,12 +92,6 @@
               <h2 ALIGN="center">Let's Add your Task!</h2>
             </b>
             <p class="description" ALIGN="center">Silahkan masukan judul dan deskripsi tugasmu</p>
-
-            {% if messages %}
-                {% for message in messages %}
-                    <p class="messsage" ALIGN="center" style="color:red">{{message}}</p>
-                {% endfor %}
-            {% endif %}   
 
             <!-- Input fields -->
             <div class="form-group" style="margin-top:4%;">
@@ -138,7 +124,7 @@
     </div>
   </div>
 
- 
+<!-- Block container grid card  -->
 <div class="card-grid" style=" display: grid; grid-template-columns: auto auto auto auto; gap: 10px; padding: 10px;"></div>
 </body>
 
