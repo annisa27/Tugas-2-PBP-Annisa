@@ -135,5 +135,4 @@ def create_todolist_ajax(request):
             'pk':task.pk
         }
         print(result)
-
         return JsonResponse(result)
