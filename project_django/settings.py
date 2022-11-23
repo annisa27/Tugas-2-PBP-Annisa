@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'katalog',
     'mywatchlist',
     'todolist',
-    'addproducttest',
 ]
 
 MIDDLEWARE = [
