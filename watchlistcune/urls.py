@@ -8,8 +8,8 @@ app_name = 'watchlistcune'
 
 urlpatterns = [
     path('', show_mywatchlist, name='show_mywatchlist'),
-    path('xml/', show_xml, name='show_xml'),
-    path('json/', show_json, name='show_json'),
-    path('html/', show_html, name='show_html'),
+    path('/xml/', show_xml, name='show_xml'),
+    path('/json/', show_json, name='show_json'),
+    path('/html/', show_html, name='show_html'),
    
 ]
