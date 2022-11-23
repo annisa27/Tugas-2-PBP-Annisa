@@ -51,7 +51,7 @@ def show_html(request):
         pesan = "Wah, kamu masih sedikit menonton!"
     context = {
         'item_mywatchlist': item_mywatchlist,
-        'nama' : 'Rifqi',
+        'nama' : 'Annisa',
         "pesan" : pesan,
     }
     return render(request, 'mywatchlist.html', context)
