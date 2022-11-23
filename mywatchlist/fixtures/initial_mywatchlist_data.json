@@ -3,7 +3,7 @@
       "model": "mywatchlist.BarangMyWatchlist",
       "pk": 1,
       "fields": {
-        "watched": false,
+        "watched": true,
         "title": "Joker",
         "rating": 5,
         "release_date": "2022-05-06",
