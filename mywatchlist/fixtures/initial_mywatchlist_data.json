@@ -1,113 +1,112 @@
 [
     {
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":1,
-        "fields":{
-            "watched":"sudah",
-            "title":"Avatar",
-            "rating": 5,
-            "release_date": "16 Desember 2022",
-            "review": "Avatar adalah film fiksi yang sangat menarik. Mengulas perdaban makhluk biru yang cukup modern"
-        }
-},
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 1,
+      "fields": {
+        "watched": false,
+        "title": "Joker",
+        "rating": 5,
+        "release_date": "2022-05-06",
+        "review": "Film ini menyajikan cerita yang unik tentang kehidupan seorang badut yang menjadi penjahat. Akting dari aktor-aktornya sangat memukau dan sangat memnjiwai karakter yang mereka perankan"
+      }
+    },
     {
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":2,
-        "fields":{
-            "watched":"sudah",
-            "title":"Start-Up",
-            "rating": 4,
-            "release_date": "17 Oktober 2020",
-            "review": "Start-Up adalah drama korea yang mengangkat terma tentang pembangunan usaha rintisan di dunia digital. Plot cerita yang diberikan cukup menarik dan dibumbui oleh kisah cinta yang menggemaskan. Film ini cocok ditonton untuk mengisi waktu luang karena cerita yang disajikan cukup ringan dan tersedia penjelasan atas istilah-istilah yang muncul"
-        }
-}, 
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":3,
-        "fields":{
-            "watched":"sudah",
-            "title":"Stranger Things",
-            "rating": 4,
-            "release_date": "15 Juli 2016",
-            "review": "Stranger things adalah series yang mengangkat tema monster dan dunia lain yang bernama Upside Down. Cerita yang disajikan unik dan belum ada di film lain. Banyak sekali pelajaran yang bisa diambil pada series ini terkait persahabatn dan kekeluargaan, sehingga cocok sekali ditonton bersama teman"
-        }
-},
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":4,
-        "fields":{
-            "watched":"sudah",
-            "title":"The Notebook",
-            "rating": 4,
-            "release_date": "25 Juni 2004",
-            "review": "Film the notebook adalah film yang menyajikan kisah romantis penuh lika liku. Film ini menyajikan alur mundur sehingga agak berat ditonton pada waktu bersantai. Namun secara keseluruhan film ini bagus dan story-telling yang disajikan sangat menarik"
-        }
-},
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":5,
-        "fields":{
-            "watched":"sudah",
-            "title":"Jurassic Park",
-            "rating": 5,
-            "release_date": "11 Juni 1993",
-            "review": "Jurassic Park adalah film yang menyediakan pengalaman thriller sehingga menghibur penontonnya. CGI yang disajikan untuk film 90an cukup keren dan merupakan pengalaman baru"
-        }
-},
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":6,
-        "fields":{
-            "watched":"sudah",
-            "title":"Joker",
-            "rating": 4.8,
-            "release_date": "2 Oktober 2019",
-            "review": "Film ini menyajikan cerita yang unik tentang kehidupan seorang badut yang menjadi penjahat. Akting dari aktor-aktornya sangat memukau dan sangat memnjiwai karakter yang mereka perankan"
-        }
-},
-{
-    "model":"mywatchlist.barangmywatchlist",
-        "pk":7,
-        "fields":{
-            "watched":"belum",
-            "title":"Shang Chi",
-            "rating": 4.9,
-            "release_date": "30 September 2021",
-            "review": "Visual yang kuat, akting, dan cerita menarik yang segar yang diceritakan secara artistik. Humor yang bagus, aksi yang menakjubkan, dan arah seni yang mempesona. Ini adalah film menghibur yang kuat!"
-        }
-},
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":8,
-        "fields":{
-            "watched":"belum",
-            "title":"Interstellar",
-            "rating": 4,
-            "release_date": "6 November 2014",
-            "review": "Interstellar bukan hanya petualangan luar angkasa besar yang layak untuk layar lebar, ini juga merupakan kisah emosional yang kuat tentang ikatan antara ayah dan anak perempuan, dan bagaimana cinta itu dapat mendorong seseorang untuk mencoba hal yang mustahil."
-        }
-},
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":9,
-        "fields":{
-            "watched": "belum",
-            "title":"Forrest Gump",
-            "rating": 5,
-            "release_date": "6 Juli 1994",
-            "review": "Forrest gump adalah film legenda Amerika yang harus ditonton setidaknya sekali seumur hidup. Keabadian, kepedihan, dan kegembiraannya sangat menular."
-        }
-},
-{
-        "model":"mywatchlist.barangmywatchlist",
-        "pk":10,
-        "fields":{
-            "watched": "belum",
-            "title":"Frozen",
-            "rating": 4,
-            "release_date": "29 November 2013",
-            "review": "Dianimasikan dengan indah, ditulis dengan cerdas, dan diisi dengan lagu-lagu bernyanyi, Frozen menambahkan entri lain yang layak untuk Disney"
-        }
-}
-    
-]
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 2,
+      "fields": {
+        "watched": false,
+        "title": "Shang Chi",
+        "rating": 2,
+        "release_date": "2022-12-17",
+        "review": "Visual yang kuat, akting, dan cerita menarik yang segar yang diceritakan secara artistik. Humor yang bagus, aksi yang menakjubkan, dan arah seni yang mempesona. Ini adalah film menghibur yang kuat!"
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 3,
+      "fields": {
+        "watched": false,
+        "title": "Interstellar",
+        "rating": 5,
+        "release_date": "2019-04-25",
+        "review": "Interstellar bukan hanya petualangan luar angkasa besar yang layak untuk layar lebar, ini juga merupakan kisah emosional yang kuat tentang ikatan antara ayah dan anak perempuan, dan bagaimana cinta itu dapat mendorong seseorang untuk mencoba hal yang mustahil."
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 4,
+      "fields": {
+        "watched": false,
+        "title": "Forrest Gump",
+        "rating": 4,
+        "release_date": "2021-08-13",
+        "review": "Forrest gump adalah film legenda Amerika yang harus ditonton setidaknya sekali seumur hidup. Keabadian, kepedihan, dan kegembiraannya sangat menular.."
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 5,
+      "fields": {
+        "watched": false,
+        "title": "Frozen",
+        "rating": 3,
+        "release_date": "2023-08-4",
+        "review": "Dianimasikan dengan indah, ditulis dengan cerdas, dan diisi dengan lagu-lagu bernyanyi, Frozen menambahkan entri lain yang layak untuk Disney"
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 6,
+      "fields": {
+        "watched": false,
+        "title": "Avatar",
+        "rating": 5,
+        "release_date": "2021-08-13",
+        "review": "Avatar is a fun adventure that will keep you entertained for the entire runtime. It's a great movie for the whole family."
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 7,
+      "fields": {
+        "watched": false,
+        "title": "Start-up",
+        "rating": 5,
+        "release_date": "2022-05-27",
+        "review": "Start-Up adalah drama korea yang mengangkat terma tentang pembangunan usaha rintisan di dunia digital. Plot cerita yang diberikan cukup menarik dan dibumbui oleh kisah cinta yang menggemaskan. Film ini cocok ditonton untuk mengisi waktu luang karena cerita yang disajikan cukup ringan dan tersedia penjelasan atas istilah-istilah yang muncul"
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 8,
+      "fields": {
+        "watched": true,
+        "title": "Stranger things",
+        "rating": 4,
+        "release_date": "2022-05-05",
+        "review": "Stranger things adalah series yang mengangkat tema monster dan dunia lain yang bernama Upside Down. Cerita yang disajikan unik dan belum ada di film lain. Banyak sekali pelajaran yang bisa diambil pada series ini terkait persahabatn dan kekeluargaan, sehingga cocok sekali ditonton bersama teman"
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 9,
+      "fields": {
+        "watched": false,
+        "title": "The Notebook",
+        "rating": 2,
+        "release_date": "2022-03-30",
+        "review": "Film the notebook adalah film yang menyajikan kisah romantis penuh lika liku. Film ini menyajikan alur mundur sehingga agak berat ditonton pada waktu bersantai. Namun secara keseluruhan film ini bagus dan story-telling yang disajikan sangat menarik"
+      }
+    },
+    {
+      "model": "mywatchlist.BarangMyWatchlist",
+      "pk": 10,
+      "fields": {
+        "watched": false,
+        "title": "Jurassic Park",
+        "rating": 4,
+        "release_date": "2022-03-02",
+        "review": "Jurassic Park adalah film yang menyediakan pengalaman thriller sehingga menghibur penontonnya. CGI yang disajikan untuk film 90an cukup keren dan merupakan pengalaman baru"
+      }
+    }
+  ]

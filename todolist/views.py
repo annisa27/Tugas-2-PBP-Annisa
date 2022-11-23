@@ -17,7 +17,6 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.models import ToDoList
 
-
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 

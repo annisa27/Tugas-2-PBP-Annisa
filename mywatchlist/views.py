@@ -50,7 +50,7 @@ def message():
 
     for i in watched:
         all_list += 1
-        if i['watched'] == "sudah":
+        if i['watched'] == True:
             sudah += 1
 
     if sudah >= all_list-sudah:

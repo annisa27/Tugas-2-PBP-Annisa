@@ -40,14 +40,21 @@
                 title : $('#title').val(),
                 description: $('#description').val()},
                 function (result) {
-                  $(".card-grid").append(`      
-                    <div class="card" style="max-width: 18rem;">
-                        <div class="card-body">
-                          <h4 class="card-title">${result.fields.title}</h5>
-                          <p class="card-text">Created on: ${result.fields.date}</p>
-                          <p class="card-text">${result.fields.description}</p>
-                        </div>
-                    </div>
+                  $(".card-grid").append(
+                        
+                    `       
+                    <div>
+                        <div class="card" style="margin:2%;">
+                            <div class="card-header" style="background-color: rgb(195, 107, 184);">
+                                <h4 class="card-title">${result.fields.title}</h4>
+                                <p class="card-text">Created on: ${result.fields.date}</p>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text">${result.fields.description}</p>
+                            </div>
+                         <div>
+                    <div>
                         `)
                   $('#title').val(''),
                   $('#description').val('')
