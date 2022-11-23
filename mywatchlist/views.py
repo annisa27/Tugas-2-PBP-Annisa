@@ -25,7 +25,6 @@ def show_xml(request):
 def show_json(request):
     data = BarangMyWatchlist.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-
 def goals_by_data(request, format):
     data = BarangMyWatchlist.objects.all()
     if format == 'json':
